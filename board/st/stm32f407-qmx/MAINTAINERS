@@ -1,0 +1,6 @@
+STM32F407-QMX BOARD
+M:	Kamil Lulko <kamil.lulko@gmail.com>
+S:	Maintained
+F:	board/st/stm32f407-qmx/
+F:	include/configs/stm32f407-qmx.h
+F:	configs/stm32f407-qmx_defconfig
