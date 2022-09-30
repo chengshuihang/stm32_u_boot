@@ -40,20 +40,24 @@
 			};
 
 			gpioh: gpio@40021c00 {
-				gpio-ranges = <&pinctrl 0 112 16>;
+				gpio-ranges = <&pinctrl 0 112 2>;
 			};
 
-			gpioi: gpio@40022000 {
-				gpio-ranges = <&pinctrl 0 128 16>;
-			};
+			// gpioh: gpio@40021c00 {
+			// 	gpio-ranges = <&pinctrl 0 112 16>;
+			// };
 
-			gpioj: gpio@40022400 {
-				gpio-ranges = <&pinctrl 0 144 16>;
-			};
+			// gpioi: gpio@40022000 {
+			// 	gpio-ranges = <&pinctrl 0 128 16>;
+			// };
 
-			gpiok: gpio@40022800 {
-				gpio-ranges = <&pinctrl 0 160 8>;
-			};
+			// gpioj: gpio@40022400 {
+			// 	gpio-ranges = <&pinctrl 0 144 16>;
+			// };
+
+			// gpiok: gpio@40022800 {
+			// 	gpio-ranges = <&pinctrl 0 160 8>;
+			// };
 		};
 	};
 };
