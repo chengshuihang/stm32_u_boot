@@ -8,6 +8,7 @@ obj-$(CONFIG_MPC83XX_SDRAM) += mpc83xx_sdram.o
 obj-$(CONFIG_SANDBOX) += sandbox_ram.o
 obj-$(CONFIG_STM32MP1_DDR) += stm32mp1/
 obj-$(CONFIG_STM32_SDRAM) += stm32_sdram.o
+obj-$(CONFIG_STM32_SRAM) += stm32_sram.o
 obj-$(CONFIG_ARCH_BMIPS) += bmips_ram.o
 
 obj-$(CONFIG_ARCH_ROCKCHIP) += rockchip/

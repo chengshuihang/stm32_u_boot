@@ -34,6 +34,14 @@ config STM32_SDRAM
 	  support external memories like sdram, psram & nand.
 	  This driver is for the sdram memory interface with the FMC.
 
+config STM32_SRAM
+	bool "Enable STM32 SRAM support"
+	depends on RAM
+	help
+	  STM32F4 family devices support flexible memory controller(FMC) to
+	  support external memories like sdram, psram & nand.
+	  This driver is for the sram memory interface with the FMC.
+
 config MPC83XX_SDRAM
 	bool "Enable MPC83XX SDRAM support"
 	depends on RAM

@@ -4,7 +4,7 @@
  * Author(s): Patrice Chotard, <patrice.chotard@foss.st.com> for STMicroelectronics.
  */
 
-#include <dt-bindings/memory/stm32-sdram.h>
+#include <dt-bindings/memory/stm32-sram.h>
 /{
 	clocks {
 		u-boot,dm-pre-reloc;
@@ -41,21 +41,32 @@
 			 * Memory configuration from sdram datasheet
 			 * IS62WV51216
 			 */
-			bank3: bank@2 {
-			       st,sram-timing = /bits/ 8 <NO_COL_8
-							    NO_ROW_12
-							    MWIDTH_16
-							    BANKS_4
-							    CAS_3
-							    SDCLK_2
-							    RD_BURST_EN
-							    RD_PIPE_DL_0>;
-			       st,sram-ext-timing = /bits/ 8 <TMRD_3
-							   TXSR_7
-							   TRAS_4
-							   TRC_6
-							   TWR_2
-							   TRP_2 TRCD_2>;
+			bank2: bank@2 {
+					st,sram-control = /bits/ 8 <WRITE_BURST_DISABLE
+							    PAGE_SIZE_NONE
+							    ASYNCHRONOUS_WAIT_DISABLE
+							    EXTENDED_MODE_ENABLE
+							    WAIT_SIGNAL_DISABLE
+							    WRITE_OPERATION_ENABLE
+							    WAIT_TIMING_BEFORE_WS
+							    WRAP_MODE_DISABLE
+								WAIT_SIGNAL_POLARITY_LOW
+								BURST_ACCESS_MODE_DISABLE
+								NORSRAM_MEM_BUS_WIDTH_16
+								MEMORY_TYPE_SRAM
+								DATA_ADDRESS_MUX_DISABLE>;
+			       st,sram-timing = /bits/ 8 <0
+							   15
+							   11
+							   0
+							   16
+							   17 ACCESS_MODE_A>;
+					st,sram-exttiming = /bits/ 8 <0
+							   15
+							   10
+							   1
+							   16
+							   17 ACCESS_MODE_A>;
 		       };
 		};
 	};
@@ -159,7 +170,7 @@
 
 				 <STM32_PINMUX('D', 4, AF12)>, /* NOE */
 				 <STM32_PINMUX('D', 5, AF12)>, /* NWE */
-				 <STM32_PINMUX('G',10, AF12)>, /* NE3 */
+				 <STM32_PINMUX('G',10, AF12)>; /* NE3 */
 			slew-rate = <2>;
 			u-boot,dm-pre-reloc;
 		};
